@@ -2,9 +2,6 @@ name: Release
 
 # Only trigger when a pull request into main branch is closed.
 on:
-  push:
-    branches:
-      - main
   pull_request:
     types: [closed]
     branches:
@@ -12,7 +9,7 @@ on:
 
 jobs:
   tests:
-    # if: "github.event.pull_request.merged == true"
+    if: "github.event.pull_request.merged == true"
     runs-on: ubuntu-latest
     env:
       USING_COVERAGE: '3.10'
