@@ -26,18 +26,32 @@ UNCATEGORISED_SECTION_HEADING = "### Uncategorised!"
 
 COMMIT_CODES_TO_HEADINGS_MAPPING = {
     "FEA": "### New features",
+    "fea": "### New features",
     "ENH": "### Enhancements",
+    "enh": "### Enhancements",
     "FIX": "### Fixes",
+    "fix": "### Fixes",
     "OPS": "### Operations",
+    "ops": "### Operations",
     "DEP": "### Dependencies",
+    "dep": "### Dependencies",
     "REF": "### Refactoring",
+    "ref": "### Refactoring",
     "TST": "### Testing",
+    "tst": "### Testing",
     "MRG": OTHER_SECTION_HEADING,
+    "mrg": OTHER_SECTION_HEADING,
+    "merge": OTHER_SECTION_HEADING,
     "REV": "### Reversions",
+    "rev": "### Reversions",
     "CHO": "### Chores",
+    "cho": "### Chores",
     "STY": "### Style",
+    "sty": "### Style",
     "WIP": OTHER_SECTION_HEADING,
+    "wip": OTHER_SECTION_HEADING,
     "DOC": OTHER_SECTION_HEADING,
+    "doc": OTHER_SECTION_HEADING,
 }
 
 BREAKING_CHANGE_COUNT_KEY = "BREAKING CHANGE COUNT"
