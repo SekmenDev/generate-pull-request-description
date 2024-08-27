@@ -84,10 +84,10 @@ class PullRequestDescriptionGenerator:
         stop_point,
         pull_request_url=None,
         api_token=None,
-        header="# Contents",
+        header="# Commits in this PR",
         list_item_symbol="-",
         commit_codes_to_headings_mapping=None,
-        include_link_to_pull_request=True,
+        include_link_to_pull_request=False,
     ):
         if stop_point.upper() not in STOP_POINTS:
             raise ValueError(f"`stop_point` must be one of {STOP_POINTS!r}; received {stop_point!r}.")
