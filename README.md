@@ -1,5 +1,5 @@
-[![Release](https://github.com/octue/generate-pull-request-description/actions/workflows/release.yml/badge.svg)](https://github.com/octue/generate-pull-request-description/actions/workflows/release.yml)
-[![codecov](https://codecov.io/gh/octue/generate-pull-request-description/branch/main/graph/badge.svg?token=J3NFSPZJHW)](https://codecov.io/gh/octue/generate-pull-request-description)
+[![Release](https://github.com/SekmenDev/generate-pull-request-description/actions/workflows/release.yml/badge.svg)](https://github.com/SekmenDev/generate-pull-request-description/actions/workflows/release.yml)
+[![codecov](https://codecov.io/gh/SekmenDev/generate-pull-request-description/branch/main/graph/badge.svg?token=J3NFSPZJHW)](https://codecov.io/gh/SekmenDev/generate-pull-request-description)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
@@ -24,7 +24,7 @@ the description each time you push:
 steps:
 - uses: actions/checkout@v3
 
-- uses: octue/generate-pull-request-description@1.0.0.beta-2
+- uses: SekmenDev/generate-pull-request-description@1.0.0
   id: pr-description
   with:
     pull_request_url: ${{ github.event.pull_request.url }}
