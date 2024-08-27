@@ -79,4 +79,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: SekmenDev/generate-pull-request-description:${{ needs.tests.outputs.package_version }},SekmenDev/generate-pull-request-description:latest
+          tags: sekmenhuseyin/generate-pull-request-description:${{ needs.tests.outputs.package_version }},sekmenhuseyin/generate-pull-request-description:latest
