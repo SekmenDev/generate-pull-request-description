@@ -353,12 +353,12 @@ class PullRequestDescriptionGenerator:
         :param int breaking_change_count: the number of breaking changes
         :return str:
         """
-        if self.current_pull_request is not None and self.include_link_to_pull_request:
-            link_to_pull_request = (
-                f" ([#{self.current_pull_request['number']}]({self.current_pull_request['html_url']}))"
-            )
-        else:
-            link_to_pull_request = ""
+        # if self.current_pull_request is not None and self.include_link_to_pull_request:
+        #     link_to_pull_request = (
+        #         f" ([#{self.current_pull_request['number']}]({self.current_pull_request['html_url']}))"
+        #     )
+        # else:
+        link_to_pull_request = ""
 
         contents_section = f"{self.header}{link_to_pull_request}\n\n"
 
@@ -444,9 +444,9 @@ def main(argv=None):
 
     parser.add_argument(
         "--header",
-        default="# Contents",
+        default="## Commits",
         type=str,
-        help="The header (including MarkDown styling) to put the release notes under. Default is '# Contents'",
+        help="The header (including MarkDown styling) to put the release notes under. Default is '## Commits'",
     )
 
     parser.add_argument(
@@ -469,7 +469,7 @@ def main(argv=None):
         api_token=args.api_token,
         header=args.header,
         list_item_symbol=args.list_item_symbol,
-        include_link_to_pull_request=not args.no_link_to_pull_request,
+        include_link_to_pull_request=false,
     ).generate()
 
     print(release_notes)

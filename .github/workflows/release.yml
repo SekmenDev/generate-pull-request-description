@@ -75,8 +75,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v3.1.1
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          tags: SekmenDev/generate-pull-request-description:${{ needs.tests.outputs.package_version }},SekmenDev/generate-pull-request-description:latest
+          tags: sekmenhuseyin/generate-pull-request-description:${{ needs.tests.outputs.package_version }},sekmenhuseyin/generate-pull-request-description:latest
