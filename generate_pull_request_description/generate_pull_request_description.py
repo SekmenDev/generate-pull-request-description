@@ -86,7 +86,7 @@ class PullRequestDescriptionGenerator:
         stop_point,
         pull_request_url=None,
         api_token=None,
-        header="# Commits in this PR",
+        header="",
         list_item_symbol="-",
         commit_codes_to_headings_mapping=None,
         include_link_to_pull_request=False,
@@ -355,14 +355,8 @@ class PullRequestDescriptionGenerator:
         :param int breaking_change_count: the number of breaking changes
         :return str:
         """
-        # if self.current_pull_request is not None and self.include_link_to_pull_request:
-        #     link_to_pull_request = (
-        #         f" ([#{self.current_pull_request['number']}]({self.current_pull_request['html_url']}))"
-        #     )
-        # else:
-        link_to_pull_request = ""
-
-        contents_section = f"{self.header}{link_to_pull_request}\n\n"
+        
+        contents_section = "\n\n"
 
         if breaking_change_count:
             contents_section += self._create_breaking_change_warning(breaking_change_count)
@@ -446,7 +440,7 @@ def main(argv=None):
 
     parser.add_argument(
         "--header",
-        default="## Commits",
+        default="",
         type=str,
         help="The header (including MarkDown styling) to put the release notes under. Default is '## Commits'",
     )
