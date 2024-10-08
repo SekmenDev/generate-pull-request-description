@@ -26,6 +26,7 @@ UNCATEGORISED_SECTION_HEADING = "### Uncategorised!"
 
 COMMIT_CODES_TO_HEADINGS_MAPPING = {
     "FEA": "### New features",
+    "fea": "### New features",
     "feat": "### New features",
     "ENH": "### Enhancements",
     "enh": "### Enhancements",
@@ -41,6 +42,7 @@ COMMIT_CODES_TO_HEADINGS_MAPPING = {
     "tst": "### Testing",
     "MRG": OTHER_SECTION_HEADING,
     "mrg": OTHER_SECTION_HEADING,
+    "mer": OTHER_SECTION_HEADING,
     "merge": OTHER_SECTION_HEADING,
     "Merge": OTHER_SECTION_HEADING,
     "REV": "### Reversions",
