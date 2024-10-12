@@ -21,7 +21,7 @@ UPGRADE_INSTRUCTIONS_HEADER = "# Upgrade instructions"
 COMMIT_REF_MERGE_PATTERN = re.compile(r"Merge [0-9a-f]+ into [0-9a-f]+")
 SEMANTIC_VERSION_PATTERN = re.compile(r"tag: (\d+\.\d+\.\d+)")
 
-OTHER_SECTION_HEADING = "### Other"
+OTHER_SECTION_HEADING = "### New features"
 UNCATEGORISED_SECTION_HEADING = "### Uncategorised!"
 
 COMMIT_CODES_TO_HEADINGS_MAPPING = {
@@ -363,16 +363,16 @@ class PullRequestDescriptionGenerator:
         if breaking_change_count:
             contents_section += self._create_breaking_change_warning(breaking_change_count)
 
+        for heading in (OTHER_SECTION_HEADING, UNCATEGORISED_SECTION_HEADING):
+            if notes := categorised_commit_messages[heading]:
+                contents_section += self._create_contents_subsection(heading=heading, notes=notes)
+
         for heading, notes in categorised_commit_messages.items():
             # Save "Other" and "Uncategorised" sections for end of release notes.
             if not notes or heading in {OTHER_SECTION_HEADING, UNCATEGORISED_SECTION_HEADING}:
                 continue
 
             contents_section += self._create_contents_subsection(heading=heading, notes=notes)
-
-        for heading in (OTHER_SECTION_HEADING, UNCATEGORISED_SECTION_HEADING):
-            if notes := categorised_commit_messages[heading]:
-                contents_section += self._create_contents_subsection(heading=heading, notes=notes)
 
         return contents_section
 
